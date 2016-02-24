@@ -6,7 +6,7 @@ gem 'unicorn'                       # multi-worker based web server
 gem 'foreman'                       # Process runner for unicorn
 
 # DB Provider
-gem 'pg'                            # Use postgresql
+# gem 'pg'                            # Use postgresql
 
 # Frameworks
 gem 'ruby-terminfo'                 # Terminal info
@@ -65,7 +65,7 @@ group :development do
   gem 'quiet_assets'                # Remove asset errors from the console
   gem 'better_errors'               # Show errors in a better man7or
   gem 'binding_of_caller'           # Deeper stack traces for errors
-  gem 'interface', :git => 'https://github.com/CreateTheBridge/Interface.git'
+  # gem 'interface', :git => 'https://github.com/CreateTheBridge/Interface.git'
 end
 
 # Development and Testing assets
@@ -87,7 +87,7 @@ end
 
 
 # @TODO: Include your own gem
-
-
-
-
+gem 'locomotivecms',               # Locomotive CMS Engine
+    github: 'locomotivecms/engine',
+    branch: 'master',
+    require: 'locomotive/engine'
