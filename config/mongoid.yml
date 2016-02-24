@@ -138,6 +138,6 @@ production:
     default:
       database: locomotive_production
       hosts:
-        - localhost:27017
+        - mongo:27017
       options:
         max_pool_size: 1

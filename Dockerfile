@@ -1,4 +1,5 @@
 FROM ruby:2.2.0
+EXPOSE 3000
 MAINTAINER Joshua Tyree "joshuat@createthebridge.com"
 
 # Update & Install core dependencies
@@ -32,11 +33,8 @@ RUN bundle install
 
 ADD . $APP_HOME
 
-# EXPOSE 5000
-# ENV RAILS_ENV production
-# ENV SECRET_KEY_BASE a4482bbdb046012cf98ab3c2f64c5ae20cf0330136d5dbfb8bda1279fac33a4afc50a5a3322af9e41aa1359064336ddcaabf8e5b2ec58b50b99f391b05364582
-# CMD ["foreman", "start"]
-
-
-# Clone the application from Github
-# RUN git clone https://github.com/CreateTheBridge/locomotive-engine.git .
+ENV LOCOMOTIVE_HOST docker
+ENV RAILS_ENV production
+ENV SECRET_KEY_BASE a4482bbdb046012cf98ab3c2f64c5ae20cf0330136d5dbfb8bda1279fac33a4afc50a5a3322af9e41aa1359064336ddcaabf8e5b2ec58b50b99f391b05364582
+RUN bundle exec rake assets:precompile --trace
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
