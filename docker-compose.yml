@@ -1,0 +1,25 @@
+app:
+  build: .
+  command: bundle exec rails s
+  ports:
+    - "3000:3000"
+  volumes:
+    - .:/app
+  environment:
+    RAILS_ENV: production
+    SECRET_KEY_BASE: a4482bbdb046012cf98ab3c2f64c5ae20cf0330136d5dbfb8bda1279fac33a4afc50a5a3322af9e41aa1359064336ddcaabf8e5b2ec58b50b99f391b05364582
+  links:
+    - mongo
+
+mongodata:
+  image: mongo:3.0.4
+  volumes:
+    - /data/db
+  command: --break-mongo
+mongo:
+  image: mongo:3.0.4
+  volumes_from:
+    - mongodata
+  ports:
+    - "27017:27017"
+  command: --smallfiles --rest --auth

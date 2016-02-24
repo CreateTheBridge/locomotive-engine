@@ -1,4 +1,4 @@
-ruby '2.1.3'
+ruby '2.2.0'
 source 'https://rubygems.org'
 
 # Web Server
@@ -33,7 +33,7 @@ gem 'gibbon'                        # MailChimp API
 gem 'mandrill-api'                  # Mandrill API
 gem 'kaminari'                      # Pagination
 gem 'aasm'                          # State machine functionality
-gem 'paper_trail'                   # Record versioning functionality
+# gem 'paper_trail'                   # Record versioning functionality
 
 
 # Front-end Frameworks
