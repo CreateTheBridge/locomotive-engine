@@ -34,7 +34,15 @@ RUN bundle install
 ADD . $APP_HOME
 
 ENV LOCOMOTIVE_HOST docker
+ENV S3_BUCKET smart-site-02-locomotive
+ENV S3_KEY_ID AKIAJYESRNDV3CYMB3OQ
+ENV S3_BUCKET_REGION us-west-1
+ENV S3_SECRET_KEY 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
+ENV LOCOMOTIVE_HOST=smart-site-02.createthebridgehosting.com
+ENV S3_ASSET_HOST_URL="https://d2hyc63momaj4o.cloudfront.net"
 ENV RAILS_ENV production
 ENV SECRET_KEY_BASE a4482bbdb046012cf98ab3c2f64c5ae20cf0330136d5dbfb8bda1279fac33a4afc50a5a3322af9e41aa1359064336ddcaabf8e5b2ec58b50b99f391b05364582
 RUN bundle exec rake assets:precompile --trace
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+
+# CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+CMD ["config/container/start"]

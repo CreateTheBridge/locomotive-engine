@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Web Server
 gem 'unicorn'                       # multi-worker based web server
-gem 'foreman'                       # Process runner for unicorn
+gem 'foreman', '0.76.0'             # Process runner for unicorn
 
 # DB Provider
 # gem 'pg'                            # Use postgresql
@@ -51,6 +51,7 @@ gem 'autoprefixer-rails'            # autoprefixes vendor prefixes
 gem 'active_link_to'                # Wrapper around link_to
 gem 'turbolinks'                    # Async page loading
 gem 'jquery-turbolinks'             # Async page loading with javascript
+gem 'carrierwave-aws'
 # gem 'ember-rails'                   # Rails gem for Ember Applications
 # gem 'ember-source'                  # Ember source
 
