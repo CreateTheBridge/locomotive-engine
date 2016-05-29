@@ -74,7 +74,7 @@ group :development, :test do
   gem 'spring'                      # App Preload
   gem 'capybara'                    # functional web interaction testing framework
   gem 'rspec-rails'                 # functional test framework
-  gem 'dotenv-rails'                # Environment variable management
+  # gem 'dotenv-rails'                # Environment variable management
   gem 'database_cleaner'            # cleans test database
   gem 'selenium-webdriver'          # JavaScript & integration testing automation
   gem 'factory_girl_rails'          # test factory creation
